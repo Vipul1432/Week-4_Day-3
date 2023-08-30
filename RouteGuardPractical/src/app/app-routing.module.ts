@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'moduleB',
     loadChildren: () => import('../app/module-b/module-b.module').then(m => m.ModuleBModule),
   },
+  {
+    path: 'protected', 
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule),
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
