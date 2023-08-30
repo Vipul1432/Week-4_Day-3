@@ -13,6 +13,14 @@ const routes: Routes = [
     resolve: { data: DataResolver },  
     canActivate: [AuthGuard], 
   },
+  {
+    path: 'moduleA',
+    loadChildren: () => import('../app/module-a/module-a.module').then(m => m.ModuleAModule),
+  },
+  {
+    path: 'moduleB',
+    loadChildren: () => import('../app/module-b/module-b.module').then(m => m.ModuleBModule),
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
