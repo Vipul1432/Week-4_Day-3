@@ -10,6 +10,7 @@ export class DataResolver implements Resolve<any> {
   constructor(private dataService: DataService) {}
 
   resolve(): Observable<any> {
+    console.log("Resolver is called");
     return this.dataService.getData();
   }
 }
